@@ -1,0 +1,16 @@
+
+local button = script.Parent
+local roadPart = game.Workspace.Road
+
+
+
+-- 함수 만들기
+local function showRoad()
+
+	print("길 버튼 터치 되었다")
+	roadPart.Transparency = 0
+	roadPart.CanCollide = 0
+   
+end
+
+button.Touched:Connect(showRoad)
