@@ -1,0 +1,18 @@
+local fireball = script.Parent;
+
+--불꽃과 부딪힌경우 발생할 함수 만들기
+local function gotHit(other)
+	local charactor = other.Parent;
+	if game.Players:GetPlayerFromCharacter(charactor) then
+		local explosion = Instance.new("Explosion");
+		explosion.Parent = game.Workspace;
+		explosion.Position = fireball.Position;
+	end
+end
+
+--불꽃과 무언가 부딪혔다면
+fireball.Touched:Connect(gotHit);
+
+--5초후
+wait(5);
+fireball:Destroy();
