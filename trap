@@ -1,0 +1,9 @@
+local trap = script.Parent
+
+local function onTouch(objectTouched)
+   -- 부딪히면 함정이 폭파 
+    print("누군가가 부딪힘~~~")
+    objectTouched:Destroy()
+end
+
+trap.Touched:Connect(onTouch)
