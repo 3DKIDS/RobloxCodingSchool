@@ -1,0 +1,15 @@
+local button = script.Parent
+local firePart = game.Workspace.LightBase.LightBall
+
+
+-- 함수 만들기
+local function startFire()
+
+	print("버튼 터치 되었다")
+	-- 불켜기
+	local newFire = Instance.new("Fire")
+	newFire.Parent = firePart
+	
+end
+
+button.Touched:Connect(startFire)
