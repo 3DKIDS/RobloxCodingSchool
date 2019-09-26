@@ -1,7 +1,8 @@
+--스크랩트의 부모는 부비트랩역할 하는 파트  (상대경로)
 local trap = script.Parent
 
 local function onTouch(objectTouched)
-   -- 부딪히면 함정이 폭파 
+   -- 부딪히면 부비트랩이 작동
     print("누군가가 부딪힘~~~")
     objectTouched:Destroy()
 end
