@@ -8,11 +8,17 @@ local function onTouch(otherPart)
 	local humanoid = character:FindFirstChildWhichIsA ("Humanoid")
  
 	-- 프로그램이 제대로 작동하는지 체크하기
-	print("Something touched speedBoost")
+	print("누군가가 스피드 아이템에 터치되었다. ")
  
 	-- 기본속도 16을 기준으로 판단하기
 	if humanoid and humanoid.WalkSpeed <= 16 then
-		print("Humanoid touched speedBoost")
+		print("주인공 캐릭터가 터치 되었다.")
+		-- 2초 동단 스피드가 50이 되었다 다시 기본 속도 16으로 된다.
+		humanoid.WalkSpeed = 50
+		print("야호 달려 달려~~~")
+		wait(2)
+		humanoid.WalkSpeed = 16 
+		print("다시 기본 속도  ^^")
 	end 
  
 end
