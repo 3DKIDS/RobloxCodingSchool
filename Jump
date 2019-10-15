@@ -1,0 +1,11 @@
+function OnTouched(hit)
+	local character = hit.Parent:findFirstChild("Humanoid")
+	if character ~=nil then
+		character.JumpPower = 300 --type in any number you want
+		
+		wait(2)
+		character.JumpPower = 50
+		
+	end
+end
+script.Parent.Touched:connect(OnTouched)
