@@ -1,0 +1,15 @@
+local telePart= script.Parent
+
+-- 지역공간내 순간이동!!!
+local function localMoveTo(otherPart)
+
+	local character = otherPart.Parent
+	local humanoid = character:FindFirstChildOfClass("Humanoid")
+
+	if humanoid  then
+		print("지역2로 순간이동!!!")
+		humanoid.RootPart.CFrame = CFrame.new(Vector3.new(155, 5, -214))
+	end
+end
+
+telePart.Touched:Connect(localMoveTo)
