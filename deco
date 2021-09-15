@@ -15,3 +15,22 @@ local function itemGet(player)
 		humanoid:ApplyDescription(descriptionClone)
 	end
 end
+
+
+local function itemTakeOff(player)
+	print("test")
+	local humanoid = player.Character and player.Character:FindFirstChild("Humanoid")
+	if humanoid then
+		local descriptionClone = humanoid:GetAppliedDescription()
+		--descriptionClone.HatAccessory = tostring(itemId)
+		descriptionClone.HatAccessory = ""
+		-- Apply modified "descriptionClone" to humanoid
+		humanoid:ApplyDescription(descriptionClone)
+	end
+end
+-- 연결된 기능(라인 6-12)은 이벤트를 발생시킨 플레이어를 첫 번째 매개 변수(플레이어)와 함께 
+-- FireServer() 호출에서 전달된 추가 매개 변수를 수신합니다.
+
+-- Call "onCreatePart()" when the client fires the remote event
+remoteEvent.OnServerEvent:Connect(itemGet)
+remoteEvent2.OnServerEvent:Connect(itemTakeOff)
