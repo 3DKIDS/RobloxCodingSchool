@@ -1,0 +1,9 @@
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local remoteEvent = ReplicatedStorage:WaitForChild("DecoRemoteEvent")
+
+script.Parent.MouseButton1Click:Connect(function()
+	--로컬스크립트에서 개인유저 접근하기
+	local player = game.Players.LocalPlayer
+	remoteEvent:FireServer(player)
+		
+end)
