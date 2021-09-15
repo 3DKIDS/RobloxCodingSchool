@@ -1,0 +1,11 @@
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local remoteEvent = ReplicatedStorage:WaitForChild("TakeOffRemoteEvent")
+
+script.Parent.MouseButton1Click:Connect(function()
+	--로컬스크립트에서 개인유저 접근하기
+	local player = game.Players.LocalPlayer
+	-- Fire the remote event
+	--local itemID = "7466085838"
+	remoteEvent:FireServer(player)
+
+end)
