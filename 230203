@@ -1,0 +1,27 @@
+local ProximityPromptService = game:GetService("ProximityPromptService")
+local ServerScriptService = game:GetService("ServerScriptService")
+
+local ObjectActions = require(ServerScriptService.ObjectActions)
+
+
+-- 트리거 감지시 작동1
+local function onPromptTriggered(promptObject, player)
+	ObjectActions.promptTriggeredActions(promptObject, player)
+end
+
+-- 트리거 누루기 시작시 작동2
+local function onPromptHoldBegan(promptObject, player)
+	ObjectActions.promptHoldBeganActions(promptObject, player)
+end
+
+-- 트리거 누르기 끝났을때 작동3
+local function onPromptHoldEnded(promptObject, player)
+	ObjectActions.promptHoldEndedActions(promptObject, player)
+end
+
+-- 위 세가지 트리거 감지시 작동 함수 호출
+ProximityPromptService.PromptTriggered:Connect(onPromptTriggered)
+ProximityPromptService.PromptButtonHoldBegan:Connect(onPromptHoldBegan)
+ProximityPromptService.PromptButtonHoldEnded:Connect(onPromptHoldEnded)
+------------------------------------------------------------------------
+
