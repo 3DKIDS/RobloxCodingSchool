@@ -1,0 +1,18 @@
+local barrel = script.Parent
+
+-- 서버스토리지에 저장된 장애물 볼
+local fireball = game.ServerStorage.TrapBall;
+
+
+-- 원본소스인 fireball 복사해서 사용 :기초 코딩
+while true do
+	local fireballCopy = fireball:Clone();
+	fireballCopy.Parent = game.Workspace;
+	fireballCopy.Position = barrel.Position;
+	fireballCopy.Name = "fireBall"
+	fireballCopy.LinearVelocity.VectorVelocity = Vector3.new(0,-10,-50);
+	--fireballCopy.LinearVelocity.VectorVelocity = Vector3.new(-50,10, 0)
+	fireballCopy.LinearVelocity.MaxForce= 1000000
+	wait(2);
+	fireballCopy:Destroy()
+end
